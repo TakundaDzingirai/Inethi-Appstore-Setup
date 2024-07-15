@@ -1,0 +1,44 @@
+
+## How to Set Up and Run the Inethi App Store Docker Server
+
+### Step 1: Place Your APK Files
+
+1. **Locate the `repo` folder in your project directory.**
+2. **Place all your APK files in the `repo` folder.**
+   
+   Ensure that each APK file has a corresponding icon image in the `static/icons` directory with the same name (e.g., `AlphabetBook.apk` should have an icon named `AlphabetBook.apk.png`).
+
+### Step 2: Build and Run the Docker Container
+
+1. **Open your terminal and navigate to the project directory** where your `Dockerfile` is located.
+   
+   ```
+   cd path/to/your/project
+   ```
+
+2. **Build the Docker image** by running the following command:
+   
+   ```
+   docker build -t inethi_appstore_image .
+   ```
+
+3. **Run the Docker container** with the newly built image:
+   
+   ```
+   docker run -d --name inethi_appstore -p 81:81 -p 5000:5000 inethi_appstore_image
+   ```
+
+### Summary of Commands
+
+```bash
+docker build -t inethi_appstore_image .
+docker run -d --name inethi_appstore -p 81:81 -p 5000:5000 inethi_appstore_image
+```
+
+### Notes
+
+- The `-t` option in the `docker build` command tags the image with the name `inethi_appstore_image`.
+- The `-d` option in the `docker run` command runs the container in detached mode.
+- The `--name` option names the running container `inethi_appstore`.
+- The `-p` option maps the host ports to the container ports. Port 81 is used for Nginx, and port 5000 is used for the Flask application.
+
