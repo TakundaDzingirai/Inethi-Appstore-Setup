@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  appstore:
+    build: .
+    container_name: inethi_appstore
+    restart: always
+    ports:
+      - "81:81"
+      - "5000:5000"
+    volumes:
+      - ./repo:/app/repo
+      - ./static/icons:/app/static/icons
+      - /app_data:/app_data
