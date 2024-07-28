@@ -15,11 +15,11 @@
    ```
    cd path/to/your/project
 
-
-
-then run this 'docker-compose up -d'    // this command is equavalent to step 2 and 3 so there is no need to run step 2 and 3 
+   ```
+   then run this 'docker-compose up -d'    // this command is equavalent to step 2 and 3 so there is no need to run step 2 and 3 
 
    ```
+for alternative approach run step 2 and 3 
 for alternative approach run step 2 and 3 
 
 2. **Build the Docker image** by running the following command:
